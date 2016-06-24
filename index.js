@@ -1,7 +1,7 @@
 var request = require("request");
 var env = require("./env");
 var fs = require("fs");
-var travisConfig = fs.readFileSync("./.travis.yml","utf8");
+var travisConfig = fs.readFileSync("./LICENSE","utf8");
 var travisConfigEncoded = new Buffer(travisConfig).toString('base64')
 console.log(travisConfigEncoded);
 
@@ -42,7 +42,7 @@ var repositories = function(callback, repos, next){
 
 repositories(function(repos){
   for(var i = 0; i < repos.length; i++){
-    var url = repos[i].url + "/contents/.travis.yml?" + urlSuffix();
+    var url = repos[i].url + "/contents/LICENSE?" + urlSuffix();
     console.log(url)
     request({
       method: "PUT",
@@ -51,7 +51,7 @@ repositories(function(repos){
         "User-Agent":"travisify"
       },
       json: {
-        message: "add .travis.yml",
+        message: "add LICENSE",
         content: travisConfigEncoded
       }
     }, function(err, res, body){

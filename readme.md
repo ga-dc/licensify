@@ -1,4 +1,4 @@
-# Travisify
+# Licensify
 
 To test, add this to a file called env.js:
 
