@@ -1,6 +1,6 @@
 # Licensify
 
-To test, add this to a file called env.js:
+To update every repo in an organization with a license, add the below to a file called env.js:
 
 ```js
 //env.js
