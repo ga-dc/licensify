@@ -15,7 +15,7 @@ var repositories = function(callback, repos, next){
   if(next){
     suffix += "&page=" + next
   }
-  request("https://api.github.com/users/ga-wdi-lessons/repos?" + suffix, {
+  request("https://api.github.com/users/"+env.org+"/repos?" + suffix, {
     headers: {
       "User-Agent":"travisify"
     }
